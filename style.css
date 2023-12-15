@@ -1,10 +1,10 @@
 body {
     background: url(/images/WhatsApp\ Image\ 2023-12-13\ at\ 12.29.18_e0fab906.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
 html {
-    background: url(/images/WhatsApp\ Image\ 2023-12-13\ at\ 12.29.18_e0fab906.jpg);
     opacity: 1;
 }
 
