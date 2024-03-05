@@ -1,0 +1,34 @@
+.form-group {
+    margin-top: 15px;
+}
+
+.form-group label {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+.form-group input[type="Submit"] {
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form-group input[type="Submit"]:hover {
+    background-color: #45a049;
+}
