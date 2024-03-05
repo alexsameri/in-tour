@@ -27,3 +27,12 @@ document.getElementById('submitButton').addEventListener('click', function(event
         alert('Please select a service.');
     }
 });
+
+const stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+        console.log("hello")
+        const appearance = { /* appearance */ };
+        const options = { /* options */ };
+        const elements = stripe.elements({ clientSecret, appearance });
+        const paymentElement = elements.create('payment', options);
+        paymentElement.mount('#payment-element');
+      
