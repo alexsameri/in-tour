@@ -8,11 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
 		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-        <style>
-            body {
-                background-color: red;
-            }
-        </style>
 
 		<!-- CSS here -->
             <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -114,7 +109,7 @@
         <!-- slider Area Start-->
         <div class="slider-area ">
             <!-- Mobile Menu -->
-            <div class="single-slider slider-height2 d-flex align-items-center" data-background="assets/img/hero/about.jpg">
+            <div class="single-slider slider-height2 d-flex align-items-center" data-background="assets/img/hero/book.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
@@ -141,22 +136,70 @@
                         <div class="right-caption">
                             <!-- booking form info -->
                             <div class="booking form">
-                                <h2><span>Payment and booking form</span></h2>
-                                <form action="payment.php" method="post">
-                                    <label for="name">Name:</label><br>
-                                    <input type="text" name="name" id="name" placeholder="name" required><br><br>
+                                <h3 class="mb-30">Booking form</h3>
+						<form action="#">
+							<div class="mt-10">
+                                <label for="text">First name:</label>
+								<input type="text" name="first_name" placeholder="First Name"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required
+									class="single-input">
+							</div>
+							<div class="mt-10">
+                                <label for="text">Middle name:</label>
+								<input type="text" name="middle_name" placeholder="Middle Name"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required
+									class="single-input">
+							</div>
+							<div class="mt-10">
+                                <label for="text">Last name:</label>
+								<input type="text" name="last_name" placeholder="Last Name"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required
+									class="single-input">
+							</div>
+							<div class="mt-10">
+                                <label for="email">Email address:</label>
+								<input type="email" name="EMAIL" placeholder="Email address"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required
+									class="single-input">
+							</div>
+							<div class="input-group-icon mt-10">
+                                <label for="text">Address</label>
+								<div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>
+								<input type="text" name="address" placeholder="Address" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = 'Address'" required class="single-input">
+							</div>
+							<div class="input-group-icon mt-10">
+								<div class="icon"><i class="fa fa-plane" aria-hidden="true"></i> </div>
+								<div class="form-select" id="default-select">
+											<select>
+												<option value=" 1">Local town</option>
+									<option value="1">Loitokitok</option>
+									<option value="1">Meru</option>
+									<option value="1">Kit mikayi</option>
+									<option value="1">Oloishurua</option>
+									</select>
+								</div>
+							</div>
+							<div class="input-group-icon mt-10">
+								<div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+								<div class="form-select" id="default-select"">
+											<select>
+												<option value=" 1">Country</option>
+									<option value="1">Kenya</option>
+									<option value="1">Tanzania</option>
+									<option value="1">Uganda</option>
+									<option value="1">Rwanda</option>
+									</select>
+								</div>
+							</div>
 
-                                    <label for="email">Email:</label><br>
-                                    <input type="email" name="email" id="email" placeholder="email" required><br><br>
-
-                                    <label for="phone">Phone Number:</label><br>
-                                    <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="phone number" required><br><br>
-
-                                    <label for="message">Additional Message:</label><br>
-                                    <textarea name="message" id="messsage" cols="30" rows="10" placeholder="Write something..."></textarea><br><br>
-
-                                    <button type="submit">Pay and book</button>
-                                </form>
+							<div class="mt-10">
+								<textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = 'Message'" required></textarea>
+							</div>
+							
+							
+						</form>
                             </div>
                     </div>
                 </div>
@@ -212,13 +255,13 @@
         </div>
         <!-- Our Services End -->
         <!-- Video Start Arera -->
-        <div class="video-area video-bg pt-200 pb-200"  data-background="assets/img/service/video-bg.jpg">
+        <div class="video-area video-bg pt-200 pb-200"  data-background="assets/img/service/Nature_Travel.jpeg">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="video-caption text-center">
                             <div class="video-icon">
-                                <a class="popup-video" href="https://www.youtube.com/watch?v=1aP-TXUpNoU" tabindex="0"><i class="fas fa-play"></i></a>
+                                <a class="popup-video" href="https://www.youtube.com/watch?v=Y0akFVaxYiQ&ab_channel=Wakadinali" tabindex="0"><i class="fas fa-play"></i></a>
                             </div>
                             <p class="pera1">Love where you're going in the perfect time.</p>
                             <p class="pera2">In-tour is an exciting, adventurous place to be.</p>
@@ -320,13 +363,13 @@
 	<!-- JS here -->
 	
 		<!-- All JS Custom Plugins Link Here here -->
-        <!-- <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script> -->
+        <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
 		<!-- Services js -->
         <script src="./assets/js/service.js"></script>
 		<!-- Jquery, Popper, Bootstrap -->
 		<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-        <!-- <script src="./assets/js/popper.min.js"></script> -->
-        <!-- <script src="./assets/js/bootstrap.min.js"></script> -->
+        <script src="./assets/js/popper.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>
 	    <!-- Jquery Mobile Menu -->
         <script src="./assets/js/jquery.slicknav.min.js"></script>
 
@@ -334,21 +377,21 @@
         <script src="./assets/js/owl.carousel.min.js"></script>
         <script src="./assets/js/slick.min.js"></script>
 		<!-- One Page, Animated-HeadLin -->
-        <!-- <script src="./assets/js/wow.min.js"></script> -->
+        <script src="./assets/js/wow.min.js"></script>
 		<script src="./assets/js/animated.headline.js"></script>
         <script src="./assets/js/jquery.magnific-popup.js"></script>
 
 		<!-- Scrollup, nice-select, sticky -->
         <script src="./assets/js/jquery.scrollUp.min.js"></script>
-        <!-- <script src="./assets/js/jquery.nice-select.min.js"></script> -->
+        <script src="./assets/js/jquery.nice-select.min.js"></script>
 		<script src="./assets/js/jquery.sticky.js"></script>
         
         <!-- contact js -->
-        <!-- <script src="./assets/js/contact.js"></script>
+        <script src="./assets/js/contact.js"></script>
         <script src="./assets/js/jquery.form.js"></script>
         <script src="./assets/js/jquery.validate.min.js"></script>
         <script src="./assets/js/mail-script.js"></script>
-        <script src="./assets/js/jquery.ajaxchimp.min.js"></script> -->
+        <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
         
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="./assets/js/plugins.js"></script>

@@ -1,32 +1,29 @@
-function search() {
-    // Retrieve the checkbox elements
+document.getElementById('submitButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default behavior of the anchor tag
+    
     var checkboxes = document.querySelectorAll('.single-items input[type="checkbox"]');
+    var isChecked = false;
 
-    // Initialize an empty array to store the selected device
-    var selectedServices = [];
-
-    // Loop through the checkboxes and check if they are checked
-    checkboxes.forEach(function (checkbox) {
+    // Check if any checkbox is checked
+    checkboxes.forEach(function(checkbox) {
         if (checkbox.checked) {
-            // Add the label text (service name) to the selectedServices array
-            selectedServices.push(checkbox.parentElement.textContent.trim());
+            isChecked = true;
         }
     });
 
-    if (selectedServices.length > 2) {
-        window.location.href = "index.html"; 
-        // Redirect to a different HTML page for more than two selected services
-        } else {
-        var destinationURLs = {
-            "Booking information.": "index.html",
-            "Cost calculator.": "about.html"
-        };
-
-        // Redirect to the determined destination URLs
-        selectedServices.forEach(function (service) {
-            if (destinationURLs.hasOwnProperty(service)) {
-                window.location.href = destinationURLs[service];
+    // If any checkbox is checked, redirect to the appropriate page
+    if (isChecked) {
+        checkboxes.forEach(function(checkbox) {
+            if (checkbox.checked) {
+                if (checkbox.parentNode.textContent.trim() === 'Tour guide job.') {
+                    window.location.href = 'application-form.html';
+                } else {
+                    window.location.href = 'booking.html';
+                }
             }
         });
+    } else {
+        // If no checkbox is checked, alert the user or handle it as needed
+        alert('Please select a service.');
     }
-}
+});
