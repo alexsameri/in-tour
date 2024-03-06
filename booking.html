@@ -126,15 +126,21 @@
         <!-- Booking form-->
         <div class="support-company-area servic-padding fix">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="left-caption">
+                <div class="row_img" style="display: flex;">
+                    <div class="left_img">
+                        <div class="left-caption" style="display: flex; flex-direction: column;">
                             <!-- booking details -->
                             <h2>Payment methods</h2>
-                            <div id="payment-element"></div>
+                            <div class="img-kcb">
+                                <img src="./assets/img/blog/pay.jpg" alt="pay here" class="img-fluid mb-2" style="cursor: pointer;">
+                            </div>
+                            <div class="second-img" style="display: flex; align-items: center; justify-content: flex-start;">
+                                <img src="./assets/img/blog/mpesa.png" alt="" class="img-fluid mr-2"  style="cursor: pointer; max-width: 90px; max-height: 80px; height: auto;">
+                                <img src="./assets/img/blog/airtel.png" alt="" class="img-fluid"  style="cursor: pointer; max-width: 100px; max-height: 60px; height: auto;">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6">
+                    <div class="col-xl-6 col-lg-6 order-xl-2 order-lg-2 order-1">
                         <div class="right-caption">
                             <!-- booking form info -->
                             <div class="booking form">
@@ -202,7 +208,8 @@
 							
 							
 						</form>
-                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -432,5 +439,49 @@ form.addEventListener('submit', async (event) => {
   });
 });
         </script>
+        <script>
+            // Create a Stripe client.
+            var stripe = Stripe('Your_Public_Key_Here');
+        
+            // Create an instance of Elements.
+            var elements = stripe.elements();
+        
+            // Create an instance of the card Element.
+            var card = elements.create('card');
+        
+            // Add an instance of the card Element into the `card-element` div.
+            card.mount('#card-element');
+        
+            // Handle form submission.
+            var form = document.getElementById('payment-form');
+            form.addEventListener('submit', function(event) {
+              event.preventDefault();
+        
+              stripe.createToken(card).then(function(result) {
+                if (result.error) {
+                  // Inform the user if there was an error.
+                  var errorElement = document.getElementById('card-errors');
+                  errorElement.textContent = result.error.message;
+                } else {
+                  // Send the token to your server.
+                  stripeTokenHandler(result.token);
+                }
+              });
+            });
+        
+            // Submit the token to your server.
+            function stripeTokenHandler(token) {
+              // Insert the token ID into the form so it gets submitted to the server
+              var form = document.getElementById('payment-form');
+              var hiddenInput = document.createElement('input');
+              hiddenInput.setAttribute('type', 'hidden');
+              hiddenInput.setAttribute('name', 'stripeToken');
+              hiddenInput.setAttribute('value', token.id);
+              form.appendChild(hiddenInput);
+        
+              // Submit the form
+              form.submit();
+            }
+          </script>
     </body>
 </html>
